@@ -4,7 +4,8 @@ import sorozatok from '../data/sorozatok.json';
 import Card from './Card';
 import Modal from './Modal';
 
-const MovieList = () => {
+const CardContainer:React.FC<{theme:string}> = ({ theme }) => {
+
     const [movies, setMovies] = useState<IMovie[]>([]);
     const [showModal, setShowModal] = useState<boolean>(false);
     const [selectedMovie, setSelectedMovie] = useState<IMovie | null>(null);
@@ -40,17 +41,15 @@ const MovieList = () => {
         <div className=" max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             
             {movies.map(( movie:IMovie, i:number ) => (
-                <Card key={i} {...movie} openModal={openModal} />
+                <Card theme={theme} key={i} {...movie} openModal={openModal} />
             ))}
 
         </div>
 
-        {/* Modal */}
-
-        {selectedMovie && <Modal {...selectedMovie} show={showModal} closeModal={() => setShowModal(false)} />}
+        {selectedMovie && <Modal theme={theme} {...selectedMovie} show={showModal} closeModal={() => setShowModal(false)} />}
         
         </>
     )
 }
 
-export default MovieList
+export default CardContainer;
