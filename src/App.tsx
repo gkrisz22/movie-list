@@ -17,7 +17,7 @@ function App() {
   return (
     <div className={`bg-${color}-100 p-4 min-h-screen w-full`}>
 
-      <select defaultValue={colors.indexOf(color)} className="bg-white p-2 rounded" onChange={(e:any) => setColor(e.target.value)}>
+      <select defaultValue={color} className="bg-white p-2 rounded" onChange={(e:any) => setColor(e.target.value)}>
         {colors.map((c, i) => (
           <option key={i} value={c}>{c}</option>
         ))}
