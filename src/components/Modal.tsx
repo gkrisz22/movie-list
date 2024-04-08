@@ -11,10 +11,10 @@ const Modal:React.FC<IMovie & { show:boolean, closeModal: () => void, theme:stri
       <p id="modalContent" className={`text-${theme}-700`}>{leiras}</p>
       <p id="imdbRating" className={`text-${theme}-700`}>IMDb értékelés: {imdb}</p>
       <p id="seasons" className={`text-${theme}-700`}>Évadok száma: {evadok}</p>
-      <button id="closeModal" className={`bg-${theme}-700 mt-4 bg-amber-700 text-white py-2 px-4 rounded hover:bg-${theme}-600`} onClick={closeModal}>Bezárás</button>
+      <button id="closeModal" className={`bg-${theme}-700 mt-4 bg-${theme}-700 text-white py-2 px-4 rounded hover:bg-${theme}-600`} onClick={closeModal}>Bezárás</button>
     </div>
   </div>
-  
+
   )
 }
 
